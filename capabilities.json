@@ -1,0 +1,10 @@
+{
+  "platformName": "Android",
+  "automationName": "UiAutomator2",
+  "deviceName": "Android Emulator",
+  "platformVersion": "11.0",
+  "appPackage": "com.nirafinance.customer",
+  "appActivity": "com.nirafinance.customer.MainActivity",
+  "noReset": true,
+  "newCommandTimeout": 240
+}
