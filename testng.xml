@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="NIRA Test Suite">
+  <test name="NIRA Mobile Tests">
+    <classes>
+      <class name="com.nira.tests.MobileNumberEntryTest"/>
+      <class name="com.nira.tests.OTPVerificationTest"/>
+    </classes>
+  </test>
+</suite>
