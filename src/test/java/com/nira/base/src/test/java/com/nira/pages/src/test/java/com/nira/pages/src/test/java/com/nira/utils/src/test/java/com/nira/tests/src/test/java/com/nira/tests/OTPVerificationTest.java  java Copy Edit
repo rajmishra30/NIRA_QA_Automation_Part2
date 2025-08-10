@@ -1,0 +1,31 @@
+package com.nira.tests;
+
+import com.nira.base.BaseTest;
+import com.nira.pages.MobileEntryPage;
+import com.nira.pages.OTPPage;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class OTPVerificationTest extends BaseTest {
+
+    private String getTestOTP() {
+        return "123456";
+    }
+
+    @Test
+    public void testValidOTPVerification() throws Exception {
+        MobileEntryPage entryPage = new MobileEntryPage(driver);
+        entryPage.enterPhoneNumber("9876543210");
+        entryPage.tapContinue();
+
+        OTPPage otpPage = new OTPPage(driver);
+        Assert.assertTrue(otpPage.isOTPInputVisible(), "OTP input not visible");
+
+        String otp = getTestOTP();
+        otpPage.enterOTP(otp);
+        otpPage.tapVerify();
+
+        boolean stillOnOtp = otpPage.isOTPInputVisible();
+        Assert.assertFalse(stillOnOtp, "Still on OTP screen after verifying - expected navigation to next step");
+    }
+}
